@@ -1,0 +1,36 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-10">
+            <form action="" name="form" (ngSubmit)="f.form.valid && checklogin()" #f="ngForm">
+                <div>
+                    <label>
+                        Username
+                    </label>
+                    <input type="text" name="username" class="form-control" [(ngModel)]="username" #uname="ngModel" pattern="[a-zA-Z]{5,}" required title="please enter 5 characters">
+                    <label for="" class="text-danger" *ngIf="f.submitted && !uname.valid">
+                        username is required
+                    </label>
+                </div>
+                <div>
+                    <label for="">
+                        Password
+                    </label>
+                    <input type="password" name="password" class="form-control" [(ngModel)]="password" #pwd="ngModel" required>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <button class="btn btn-success"  type="submit">
+                            Login
+                        </button>
+                    </div>
+                    <div class="col-md-4">
+                        <button type="reset" class="btn btn-danger">
+                            cancel
+                        </button>
+                    </div>
+                </div>
+            </form>
+            
+        </div>
+    </div>
+</div>
